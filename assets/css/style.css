@@ -7,6 +7,7 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+
 .container-body {
     height: 100vh;
     background: linear-gradient(to bottom left, #04010A, #0f0b22, #241f57);
@@ -15,27 +16,24 @@ html {
     align-items: center; /*Alineacion vertical cuando flex direction es row */
 }
 
+
 h2, p {
     color: white;
 }
 
-img {
+
+/*.presentation-photo  {
     width: 250px;
     border-radius: 50%;
     margin-top: 1rem;
+} */
+
+
+.presentation-text {
+    position: relative;
+    transform: translate(-35rem, -12rem);
 }
 
-.container {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 1rem;
-    background-color: rgba(172, 164, 119, 0.1);
-    width: 500px;
-    height: 400px;
-    box-shadow: 4px -4px 8px black;
-}
 
 .encabezado {
     border-bottom: 2px solid #BBB8D6;
@@ -44,9 +42,11 @@ img {
     margin-bottom: 1rem;
 }
 
+
 .titulo {
     font-size: 2rem;
 }
+
 
 .subtitulo {
     font-size: 1.2rem;
@@ -54,7 +54,8 @@ img {
     margin-top: 0.5rem;
 }
 
-.nav {
+
+.menu-nav {
     background-color: rgba(172, 164, 119, 0.1);
     position: fixed;
     display: flex;
@@ -64,17 +65,19 @@ img {
     padding: 0.5rem;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0px -4px 20px rgb(42, 41, 41);
+    box-shadow: 0px -3px 20px rgb(42, 41, 41);
     
 }
 
-.nav a {
+
+.menu-nav a {
     font-size: 1.2rem;
     color: white;
     text-decoration: none;
     margin: 0 1rem;
     transition: color 700ms ease, transform 700ms ease;
 }
+
 
 .inicioButton {
     margin-top: -1px;
@@ -83,12 +86,15 @@ img {
     border-radius: 50%;
     display: flex;
     transition: color 700ms ease, transform 700ms ease;
+    left: -5rem;
 }
+
 
 nav a:hover, .inicioButton:hover {
     transform: scale(1.2);
 }
 
-.menu, .menu2 {
+
+.menu_container {
     display: flex;
 }
