@@ -1,39 +1,282 @@
+/*
+Modo claro
+body.light-mode {
+    background-color: #f8f8f8;
+    color: #333333;
+}
+
+a.light-mode {
+    color: #007acc;
+}
+
+h1.light-mode, h2.light-mode, h3.light-mode {
+    color: #5c6bc0;
+}
+
+button.light-mode {
+    background-color: #66bb6a;
+    color: #fff;
+}
+
+Modo oscuro
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+a.dark-mode {
+    color: #bb86fc;
+}
+
+h1.dark-mode, h2.dark-mode, h3.dark-mode {
+    color: #bb86fc;
+}
+
+button.dark-mode {
+    background-color: #3700b3;
+    color: #fff;
+}
+
+
+body.dark-mode .menu-nav {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+body.light-mode .menu-nav {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+body.dark-mode .titulo,
+body.dark-mode .subtitulo {
+    color: #f5f5f5;
+}
+
+body.dark-mode .encabezado {
+    border-bottom: 2px solid #777;
+}
+
+body.dark-mode .menu-nav {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+(Estilos adicionales)
+body, a, button, h1, h2, h3 {
+    transition: background-color 0.3s, color 0.3s;
+} 
+*/
+
+
+#toggle_checkbox {
+    display: none;
+}
+
+label {
+    display: flex;
+    position: relative;
+    width: 116px;
+    height: 56px;
+    background-color: #77b5fe;
+    border-radius: 56px;
+    cursor: pointer;
+    transition: 0.3s ease background-color;
+    overflow: hidden;
+}
+
+#star {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 30px;
+    height: 30px;
+    background-color: #fafd0f;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
+    z-index: 1;
+}
+
+#moon {
+    position: absolute;
+    bottom: -52px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease bottom;
+}
+
+#moon:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -17px;
+    width: 40px;
+    height: 40px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s ease background-color;
+}
+
+#toggle_checkbox:checked + label {
+    background-color: #000;
+}
+
+#toggle_checkbox:checked + label #star {
+    top: 3px;
+    left: 64px;
+    transform: scale(0.3);
+    background-color: yellow;
+}
+
+#toggle_checkbox:checked + label .star {
+    color: yellow;
+}
+
+#toggle_checkbox:checked + label #moon {
+    bottom: 8px;
+}
+
+#toggle_checkbox:checked + label #moon:before {
+    background-color: #000;
+}
+
 * {
     margin: 0;
     padding: 0;
+}
+
+* /*Dark mode button*/ {
+    user-select: none;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #fff;
+}
+
+#toggle_checkbox {
+    display: none;
+}
+
+label {
+    display: flex;
+    position: relative;
+    width: 116px;
+    height: 56px;
+    background-color: #77b5fe;
+    border-radius: 56px;
+    cursor: pointer;
+    transition: 0.3s ease background-color;
+    overflow: hidden;
+}
+
+#star {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 30px;
+    height: 30px;
+    background-color: #fafd0f;
+    transform: scale(1);
+    border-radius: 50%;
+    transition: 0.3s ease top, 0.3s ease left, 0.3s ease transform, 0.3s ease background-color;
+    z-index: 1;
+}
+
+#star-1 {
+    position: relative;
+}
+
+#star-2 {
+    position: absolute;
+    transform: rotateZ(36deg);
+}
+
+.star {
+    top: 0;
+    left: -7px;
+    font-size: 54px;
+    line-height: 28px;
+    color: #fafd0f;
+    transition: 0.3s ease color;
+}
+
+#moon {
+    position: absolute;
+    bottom: -52px;
+    right: 8px;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease bottom;
+}
+
+#moon:before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -17px;
+    width: 40px;
+    height: 40px;
+    background-color: #03a9f4;
+    border-radius: 50%;
+    transition: 0.3s ease background-color;
+}
+
+#toggle_checkbox:checked + label {
+    background-color: #000;
+}
+
+#toggle_checkbox:checked + label #star {
+    top: 3px;
+    left: 64px;
+    transform: scale(0.3);
+    background-color: yellow;
+}
+
+#toggle_checkbox:checked + label .star {
+    color: yellow;
+}
+
+#toggle_checkbox:checked + label #moon {
+    bottom: 8px;
+}
+
+#toggle_checkbox:checked + label #moon:before {
+    background-color: #000;
 }
 
 html {
     font-family: 'Roboto', sans-serif;
 }
 
-
 .container-body {
     height: 100vh;
     background: linear-gradient(to bottom left, #04010A, #0f0b22, #241f57);
     display: flex;
-    justify-content: center; /*Alineacion horizontal cuando flex direction es row */
+    justify-content: center; /*Alineacion horizontal cuando flex direction es row pq siempre se me olvida*/
     align-items: center; /*Alineacion vertical cuando flex direction es row */
 }
-
 
 h2, p {
     color: white;
 }
 
-
-/*.presentation-photo  {
-    width: 250px;
-    border-radius: 50%;
-    margin-top: 1rem;
-} */
-
-
 .presentation-text {
     position: relative;
-    transform: translate(-35rem, -12rem);
+    transform: translate(-35rem, -10rem);
 }
-
 
 .encabezado {
     border-bottom: 2px solid #BBB8D6;
@@ -42,11 +285,9 @@ h2, p {
     margin-bottom: 1rem;
 }
 
-
 .titulo {
     font-size: 2rem;
 }
-
 
 .subtitulo {
     font-size: 1.2rem;
@@ -54,23 +295,35 @@ h2, p {
     margin-top: 0.5rem;
 }
 
-
 .menu-nav {
     background-color: rgba(172, 164, 119, 0.1);
     position: fixed;
     display: flex;
+    justify-content: space-between;  /* Asegura espacio entre el botón de inicio, el menú y dark mode */
+    align-items: center;
     top: 0;
     width: 100%;
-    height: 60px;
-    padding: 0.5rem;
-    justify-content: space-around;
-    align-items: center;
+    height: 80px;
+    padding: 0 1rem;
     box-shadow: 0px -3px 20px rgb(42, 41, 41);
-    
 }
 
+.menu_container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center; /* Centra los enlaces dentro de este contenedor */
+    flex: 1;
+}
 
-.menu-nav a {
+.darkmode {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 116px;
+    margin-right: 5rem;
+}
+
+.menu_container a {
     font-size: 1.2rem;
     color: white;
     text-decoration: none;
@@ -78,23 +331,21 @@ h2, p {
     transition: color 700ms ease, transform 700ms ease;
 }
 
-
 .inicioButton {
     margin-top: -1px;
+    margin-left: 5rem;
     width: 50px;
     height: 50px;
+    border: 2px solid transparent;
     border-radius: 50%;
+    background: #1d1d1d;
+    color: white;
     display: flex;
-    transition: color 700ms ease, transform 700ms ease;
-    left: -5rem;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
 }
 
-
-nav a:hover, .inicioButton:hover {
-    transform: scale(1.2);
-}
-
-
-.menu_container {
-    display: flex;
+.inicioButton:hover {
+    background: #262626;
 }
